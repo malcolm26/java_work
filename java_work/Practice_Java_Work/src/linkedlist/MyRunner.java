@@ -13,7 +13,7 @@ public class MyRunner {
 		list.printList();
 		Scanner sc2 = null;
 		try {
-			sc2 = new Scanner(new File("Files/people.txt"));
+			sc2 = new Scanner(new File("Files2/people.txt"));
 			
 			while (sc2.hasNextLine()) {
 	            Scanner s2 = new Scanner(sc2.nextLine());
