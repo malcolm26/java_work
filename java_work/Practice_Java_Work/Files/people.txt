@@ -1,0 +1,10 @@
+Sally,22
+Alyssa,32
+James,43
+Eric,29
+Robert,28
+Simon,19
+Andy,38
+Derrick,39
+Neo,42
+Rick,78
