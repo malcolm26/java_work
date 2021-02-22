@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>AJAX</title>
+		<!--link rel="stylesheet" type="text/css" href="style.css"-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		
+		</script>
+		
+	</head>
+	
+	<body>
+		
+        <p></p>
+        <script type="text/javascript">
+			
+			
+			if(typeof jQuery == "undefined"){
+				alert("jquery is not installed")
+			}else{
+				alert("yes it's there");
+			}
+			$.ajax("info.txt")
+                .done(function(data) {
+                
+                    $("p").html(data);
+                
+                }).fail(function() {
+                
+                alert("Could not get data");
+                
+            });
+		</script>
+		
+		
+	</body>
+</html>

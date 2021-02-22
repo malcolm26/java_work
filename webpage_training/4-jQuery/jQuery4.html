@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>jQuery</title>
+		<!--link rel="stylesheet" type="text/css" href="style.css"-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<style type="text/css">
+			#hiddenText{
+				display: none
+			}
+		</style>
+		<div>Hd</div>
+	</head>
+	
+	<body>
+		
+		<p id="text">This is some testing text</p>
+		<button id="toggle">Toggle Text</button>
+		
+        <script type="text/javascript">
+			var textShowing = true;
+			$("#toggle").click(function(){
+				if(textShowing){
+					$("#text").fadeOut(function(){
+						textShowing = false;
+					});
+				}
+				else{
+					$("#text").fadeIn(function(){
+						textShowing = true;
+					});
+				}
+				
+			});
+			
+		</script>
+		
+		
+	</body>
+</html>

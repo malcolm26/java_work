@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>My page</title>
+		
+		
+	</head>
+	
+	<body>
+	
+		<!--input type="text" id="input-text">
+		<button id="text-switch">Change the text</button>
+		<p id="text_2">This is text</p-->
+		<p>How many fingers am I holding up?</p>
+		<p><input type="text" id="number"></p>
+		<p><button id="checkWord">Guess</button></p>
+		<script type="text/javascript">
+		
+			var x = 2;
+			document.getElementById("checkWord").onclick = function(){
+				var magicWord_text = textEntered = document.getElementById("number").value;
+				var num = Math.floor((Math.random() * 6)+1);
+				if(magicWord_text == num) {
+					alert("you got it!");
+				} else {
+					alert(`wrong answer!! the number is ${num}`);
+				}
+				
+				
+			}
+			
+			/*
+			var myArray = new Array();
+			myArray[0] = "pizza";
+			myArray[1] = "chocolate";
+			var tweets = ["Good morning Everyone!", "I love coffee!"];
+			tweets.push("Back to work!");
+			tweets.splice(1, 0, "branflakes");
+			console.log(tweets);
+			
+			document.getElementById("text-switch").onclick = function(){
+				var textEntered = "";
+				textEntered = document.getElementById("input-text").value;
+				document.getElementById("text_2").innerHTML = textEntered;
+				alert(textEntered);
+			}
+			*/
+		
+		</script>
+	</body>
+</html>

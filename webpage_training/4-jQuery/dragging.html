@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>AJAX</title>
+		<!--link rel="stylesheet" type="text/css" href="style.css"-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		
+		</script>
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		<style type="text/css">
+			.draggable { 
+				width: 90px; 
+				height: 90px; 
+				padding: 0.5em; 
+				float: left; 
+				margin: 0 10px 10px 0; 
+			}
+			#containment-wrapper { 
+				width: 95%; 
+				height:150px; 
+				border:2px solid #ccc; 
+				padding: 10px; 
+				background-color: yellow;
+			}
+			#resizable{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+			}
+			#also{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="draggable">Drag me bitch!</div>
+		<div id="containment-wrapper">
+		 
+			<span>I'm contained within the box</span>
+		  
+		 
+		  
+		</div>
+		<div id="resizable"></div>
+		<div id="also"></div>
+        <script type="text/javascript">
+			$( "#draggable" ).draggable();
+			
+			$("span").draggable({ containment: "parent" });
+			$( function() {
+			$( "#resizable" ).resizable({
+					alsoResize: "#also",
+					grid:50,
+					resize: function( event, ui ) {
+						if ($("#resizable").width() > 300){
+							alert("yes");
+						}
+					}
+				});
+				$( "#also" ).resizable({grid:50});
+			} );
+			
+		</script>
+		
+		
+	</body>
+</html>

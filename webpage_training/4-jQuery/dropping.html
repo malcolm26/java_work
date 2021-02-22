@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Regular expressions</title>
+		<!--link rel="stylesheet" type="text/css" href="style.css"-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		
+		</script>
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		<style type="text/css">
+			#draggable { 
+				width: 100px; 
+				height: 100px; 
+				padding: 0.5em; 
+				float: left; 
+				margin: 10px 10px 10px 0; 
+				background-color: gray;
+			}
+			#droppable { 
+				width: 150px; 
+				height: 150px; 
+				padding: 0.5em; 
+				float: left; 
+				margin: 10px; 
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+        <div id="draggable">
+			<p>Drag me to my target</p>
+		</div>
+ 
+		<div id="droppable">
+		  <p>Drop here</p>
+		</div>
+        <script type="text/javascript">
+			$( function() {
+				$( "#draggable" ).draggable();
+				$( "#droppable" ).droppable({
+					drop: function( event, ui ){
+						console.log(event);
+					}
+				});
+			});
+			
+		</script>
+		
+		
+	</body>
+</html>

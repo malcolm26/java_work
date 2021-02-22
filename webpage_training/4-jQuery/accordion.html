@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>JQuery Accordion</title>
+		<!--link rel="stylesheet" type="text/css" href="style.css"-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		
+		</script>
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		<style type="text/css">
+			
+		</style>
+	</head>
+	
+	<body>
+		
+        <div id="accordion">
+			<h3>Section 1</h3>
+			 <div>
+				<p>Hello World</p>
+			 </div>
+		  <h3>Section 2</h3>
+		  <div>
+			<p>Hello World 2</p>
+		  </div>
+		  <h3>Section 3</h3>
+		  <div>
+			<p></p>
+			<ul>
+			  <li>List item one</li>
+			  <li>List item two</li>
+			  <li>List item three</li>
+			</ul>
+		  </div>
+		  <h3>Section 4</h3>
+		  <div>
+			<p>Hello World 3</p>
+			
+		  </div>
+		</div>
+		
+		<ul id="sortable">
+			<li>Eric</li>
+			<li>Debbie</li>
+			<li>Alyssa</li>
+			<li>Robert</li>
+			<li>Randy</li>
+			<li>Sean</li>
+			<li>Lynda</li>
+		</ul>
+		
+        <script type="text/javascript">
+			$( function() {
+				$( "#accordion" ).accordion();
+				
+				$("#sortable").sortable();
+				$( "#sortable" ).disableSelection();
+			});
+			
+		</script>
+		
+		
+	</body>
+</html>
