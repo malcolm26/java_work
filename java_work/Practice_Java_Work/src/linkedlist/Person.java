@@ -6,16 +6,20 @@ public class Person {
 		 */
 		private String name;
 		private int age; 
+		private String email;
+		private int bankingNumber;
 		
-		public Person(String newName, int newAge)
+		public Person(String newName, int newAge, String newEmail)
 		{
 			name = newName;
 			age = newAge;
+			email = newEmail;
+			//bankingNumber = newBank;
 		}	// end constructor program
 		
 		public String toString()
 		{
-			return "Name: " + name + ", Age: " + age;
+			return "Name: " + name + ", Age: " + age + ", Email: " + email;
 		}	// end method string
 
 }

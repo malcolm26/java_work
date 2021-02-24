@@ -18,6 +18,7 @@ public class LinkedListGUI extends JPanel {
 	   // declare variables that will be used in our program
 	private String names[] = {"Simon", "Andy", "Betty"};
 	private int ages[] = {22, 38, 19};
+	private String emails[] = {" ", " ", " "};
 	private int i;
 	private Person newPerson;
 	private PeopleList everyone;
@@ -48,7 +49,7 @@ public class LinkedListGUI extends JPanel {
 		for(i = 0; i < names.length; i++)
 		{
 				// create an object of a person
-			newPerson = new Person(names[i], ages[i]);
+			newPerson = new Person(names[i], ages[i], emails[i]);
 			
 				// add this object (a person) to
 				// the linked list
@@ -140,7 +141,7 @@ public class LinkedListGUI extends JPanel {
 	{
 		public void actionPerformed(ActionEvent event)
 		{
-			String inputName, inputAgeText;
+			String inputName, inputAgeText, inputEmail;
 			int inputAge;
 			
 			inputName = txtName.getText();
