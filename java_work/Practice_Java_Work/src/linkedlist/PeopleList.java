@@ -88,12 +88,16 @@ public class PeopleList {
 		
 		result = "Here is the current linked list:\n\n";
 		
-			// assign 'current' to point to
-			// the beginning of the line
+			/**
+			 * assign 'current' to point to
+			 * the beginning of the line
+			 */
 		current = list;
 		
-			// traverse the linked list until
-			// we have reached the end
+			/**
+			 * traverse the linked list until
+			 * we have reached the end
+			 */
 		while(current != null)
 		{
 				// build info about this node

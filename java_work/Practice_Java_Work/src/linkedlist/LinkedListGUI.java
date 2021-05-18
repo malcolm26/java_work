@@ -18,17 +18,17 @@ public class LinkedListGUI extends JPanel {
 	   // declare variables that will be used in our program
 	private String names[] = {"Simon", "Andy", "Betty"};
 	private int ages[] = {22, 38, 19};
-	private String emails[] = {" ", " ", " "};
+	private String emails[] = {"simon@mail.com", "andy@mail.com", "betty@mail.com"};
 	private int i;
 	private Person newPerson;
 	private PeopleList everyone;
 	
 	private String result;
 	
-	private JPanel pnlName, pnlAge, pnlTwoButtons, pnlBottom1;
+	private JPanel panelName, panelAge, pnlTwoButtons, pnlBottom1, panelEmail;
 	private JPanel pnlBottom2;
-	private JLabel lblName, lblAge, lblStringOutput, lblAuthor;
-	private JTextField txtName, txtAge;
+	private JLabel lblName, lblAge, lblEmail, lblStringOutput, lblAuthor;
+	private JTextField txtName, txtAge, txtEmail;
 	private JButton btnAddName, btnDisplay, btnExit;
 		
 	public LinkedListGUI()
@@ -65,6 +65,10 @@ public class LinkedListGUI extends JPanel {
 		lblAge.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblAge.setForeground(Color.BLACK);
 		
+		lblEmail = new JLabel("Enter an email:");
+		lblEmail.setFont(new Font("Helvetica", Font.PLAIN, 16));
+		lblEmail.setForeground(Color.BLACK);
+		
 		lblStringOutput = new JLabel();
 		lblStringOutput.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblStringOutput.setForeground(Color.BLACK);
@@ -82,6 +86,10 @@ public class LinkedListGUI extends JPanel {
 		txtAge = new JTextField(5);
 		txtAge.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		txtAge.setForeground(Color.BLACK);
+		
+		txtEmail = new JTextField(20);
+		txtEmail.setFont(new Font("Helvetica", Font.PLAIN, 16));
+		txtEmail.setForeground(Color.BLACK);
 
 		
 			//-----------create normal buttons------------
@@ -102,13 +110,17 @@ public class LinkedListGUI extends JPanel {
 
 		
 			//------------create panels------------
-		pnlName = new JPanel();
-		pnlName.add(lblName);
-		pnlName.add(txtName);
+		panelName = new JPanel();
+		panelName.add(lblName);
+		panelName.add(txtName);
 		
-		pnlAge = new JPanel();
-		pnlAge.add(lblAge);
-		pnlAge.add(txtAge);
+		panelAge = new JPanel();
+		panelAge.add(lblAge);
+		panelAge.add(txtAge);
+		
+		panelEmail = new JPanel();
+		panelEmail.add(lblEmail);
+		panelEmail.add(txtEmail);
 		
 		pnlBottom1 = new JPanel();
 		pnlBottom1.add(lblAuthor);
@@ -128,8 +140,9 @@ public class LinkedListGUI extends JPanel {
 
 		
 			// add sub panels to the main panel
-		add(pnlName);
-		add(pnlAge);
+		add(panelName);
+		add(panelAge);
+		add(panelEmail);
 		add(pnlTwoButtons);
 		add(pnlBottom1);
 		add(pnlBottom2);
@@ -171,14 +184,27 @@ public class LinkedListGUI extends JPanel {
 				// parse the age into an 'int' datatype
 			inputAge = Integer.parseInt(inputAgeText);
 			
+			inputEmail = txtEmail.getText();
+			
+			// test to see if a string
+			// has been entered
+			if(inputEmail.equals(""))
+			{
+				JOptionPane.showMessageDialog(null, "You must enter an Email!",
+						"ERROR",
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}	// end if statement 
+		
 				// add this new person to
 				// the linked list
-			newPerson = new Person(inputName, inputAge);
+			newPerson = new Person(inputName, inputAge, inputEmail);
 			everyone.add(newPerson);
 			
 			// reset text fields
 			txtName.setText("");
 			txtAge.setText("");
+			txtEmail.setText("");
 			
 			
 			
